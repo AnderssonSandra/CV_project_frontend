@@ -1,0 +1,83 @@
+/*CV navigation*/
+#cv-main-nav {
+    ul {
+        @include standard-container;
+        padding: 7em 0 7em 7em;
+        li {
+            padding: 1em 0;
+            a {
+                font-family: $headings;
+                text-decoration: none;
+                font-size: 3em;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+/*CV navigation for phone*/
+@include phone {
+    #cv-main-nav {
+        ul {
+            padding: 3em 0 2em 3em;
+            li {
+                padding: 0.6em 0;
+                a {
+                    font-size: 2em;
+                }
+            }
+        }
+    }    
+}
+
+/*Admin navigation*/
+.admin-main-nav {
+    @include standard-container;
+    padding: 3em 2em;
+    ul {
+        display: flex;
+        margin: auto;
+        li {
+            flex-grow: 1;
+            text-align: center;
+            a {
+                text-decoration: none;
+                font-size: 1.5em;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+            .active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/*Admin navigation for tablet*/
+@include tablet {
+    .admin-main-nav {
+        ul {
+            li {
+                a {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
+
+/*Admin navigation for phone*/
+@include phone {
+    .admin-main-nav {
+        ul {
+            display: block;
+            li {
+                padding: 1em 0;
+                text-align: left;
+            }
+        }
+    }
+}

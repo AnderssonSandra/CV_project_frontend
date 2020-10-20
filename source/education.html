@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Peddana&display=swap" rel="stylesheet"></head>
+<body>
+    <header class="admin-header">
+        <h1>Your Account</h1>
+    </header>
+    <nav class="admin-main-nav">
+        <ul>
+            <li><a href="about.html">About me.</a></li>
+            <li><a class="active" href="education.html">Education.</a></li>
+            <li><a href="work.html">Work Experiences.</a></li>
+            <li><a href="project.html">Projects.</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            <h2 class="admin-h2">Add Education.</h2>
+            <form action="" method="get" id="educationForm" name="educationForm">
+                <label for="education">Name of Education:</label><br>
+                <input type="text" name="education"><br>
+                <label for="school">Name of School:</label><br>
+                <input type="text" name="school"><br>
+                <label for="startDate">Start Date:</label><br>
+                <input type="date" name="startDate"><br>
+                <label for="endDate">End Date:</label><br>
+                <input type="date" name="endDate"><br>
+                <label for="description">Description:</label><br>
+                <input type="textarea" name="description"><br>
+                <input class="submit-btn" type="submit" id="educationBtn" form="educationForm" value="Add Education">
+            </form>
+        </article>
+        <article>
+            <h2 class="admin-h2">My Work Experiences.</h2>
+            <div class="education-experience">
+                <h3>Name of Education:</h3>
+                <p>Webbutvecklare</p>
+                <h3>Name of School:</h3>
+                <p>Mittuniversitet</p>
+                <h3>Date</h3>
+                <p>2020 - 2021</p>
+                <h3>Description</h3>
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
+                <button class="submit-btn">Uppdatera</button>
+                <button class="submit-btn">Radera</button>
+            </div>
+        </article>
+    </section>
+    <footer class="admin-footer">
+        <a class="admin-footer-text" href="">Sign out</a>
+    </footer>
+</body>
+</html>

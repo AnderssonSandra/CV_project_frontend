@@ -1,0 +1,94 @@
+/*CV header*/
+#cv-header {
+    @include standard-container;
+    height: 100%;
+    position: relative;
+    display: flex;
+    #cv-header-image{
+        background: url(../images/header-background.jpg);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center; 
+        width: 80%;
+        height: 100%;
+    }
+    #cv-header-empty {
+        width: 20%;
+        height: 100%;
+    }
+    #cv-header-info {
+        position: absolute;
+        width: 50%;
+        height: 62%;
+        box-sizing: border-box;
+        background-color: $beige;
+        top: 20%;
+        left: 5%;
+        padding: 10% 2% 0 5%;
+    }
+    #cv-header-name {
+        font-size: 6em;
+    }
+    #cv-header-text{
+        font-size: 1.5em;
+        padding: 3em 6em 0 0;
+    }
+}
+
+/*responsive design for CV header*/
+
+@media (max-width: 1200px) { 
+    #cv-header {
+        #cv-header-info {
+            width: 72%
+        }
+    } 
+}
+
+/*CV header tablet design */
+@include tablet { 
+    #cv-header {
+        #cv-header-info {
+            width: 80%;
+        }
+    }  
+}
+
+/*CV header phone design*/
+@include phone { 
+    #cv-header {
+        #cv-header-image{
+            width: 100%;
+        }
+        #cv-header-empty {
+            display: none;
+        }
+        #cv-header-info {
+            width: 80%;
+            height: 40%;
+            left: 0;
+            top: 50%;
+        }
+        #cv-header-name {
+            font-size: 4em;
+        }
+        #cv-header-text{
+            font-size: 1em;
+            padding: 3em 3em 0 0;
+        }
+    }  
+}
+
+/*Admin Header*/
+
+.admin-header {
+    @include standard-container;
+    height: 300px;
+    margin: 0 auto;
+    background-color: $pink;
+    h1 {
+        text-align: center;
+        font-size: 4em;
+        padding-top: 2em;
+    }
+}

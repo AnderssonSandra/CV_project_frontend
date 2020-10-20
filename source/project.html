@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV- Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Peddana&display=swap" rel="stylesheet"></head>
+<body>
+    <header class="admin-header">
+        <h1>Your Account</h1>
+    </header>
+    <nav class="admin-main-nav">
+        <ul>
+            <li><a href="about.html">About me.</a></li>
+            <li><a href="education.html">Education.</a></li>
+            <li><a href="work.html">Work Experiences.</a></li>
+            <li><a class="active" href="project.html">Projects.</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            <h2 class="admin-h2">Add Project.</h2>
+            <form action="" method="get" id="projectForm" name="projectForm">
+                <label for="name">Name of Project:</label><br>
+                <input type="text" name="name"><br>
+                <label for="link">Link to Website:</label><br>
+                <input type="text" name="link"><br>
+                <label for="techniques">Techniques:</label><br>
+                <input type="text" name="techniques"><br>
+                <label for="date">Relese Date for project:</label><br>
+                <input type="date" name="date"><br>
+                <label for="description">Description:</label><br>
+                <input type="textarea" name="description"><br>
+                <input class="submit-btn" type="submit" id="projectBtn" form="projectForm" value="Add Project">
+            </form>
+        </article>
+        <article>
+            <h2 class="admin-h2">My Projects.</h2>
+            <div class="project-experiences">
+                <h3>Name of Project:</h3>
+                <p>Projekt 1</p>
+                <h3>Link to Website:</h3>
+                <a href="">www.website.se</a>
+                <h3>Teqniques:</h3>
+                <p>.NET, Java, HTML, CSS</p>
+                <h3>Relese Year</h3>
+                <p>2020</p>
+                <h3>Description</h3>
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
+                <button class="submit-btn">Uppdatera</button>
+                <button class="submit-btn">Radera</button>
+            </div>
+        </article>
+    </section>
+    <footer class="admin-footer">
+        <a class="admin-footer-text" href="">Sign out</a>
+    </footer>
+</body>
+</html>

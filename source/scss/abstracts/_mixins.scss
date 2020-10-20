@@ -1,0 +1,18 @@
+@mixin standard-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+//Responsive design for tablet
+@mixin tablet {
+    @media (max-width: 850px) { 
+        @content; 
+    }
+}
+
+//Responsive design for phone
+@mixin phone {
+    @media (max-width: 600px) { 
+        @content; 
+    }
+}
