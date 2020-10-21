@@ -24,7 +24,7 @@
         background-color: $beige;
         top: 20%;
         left: 5%;
-        padding: 10% 2% 0 5%;
+        padding: 10em 2em 0 5em;
     }
     #cv-header-name {
         font-size: 6em;
@@ -42,6 +42,9 @@
         #cv-header-info {
             width: 72%
         }
+        #cv-header-name {
+            font-size: 5em;
+        }
     } 
 }
 
@@ -50,6 +53,9 @@
     #cv-header {
         #cv-header-info {
             width: 80%;
+        }
+        #cv-header-name {
+            font-size: 3.5em;
         }
     }  
 }
@@ -64,17 +70,18 @@
             display: none;
         }
         #cv-header-info {
-            width: 80%;
+            width: 90%;
             height: 40%;
             left: 0;
             top: 50%;
+            padding: 6em 2em 0 2em;
         }
         #cv-header-name {
-            font-size: 4em;
+            font-size: 2em;
         }
         #cv-header-text{
-            font-size: 1em;
-            padding: 3em 3em 0 0;
+            font-size: 0.8em;
+            padding: 1em 1em 0 0;
         }
     }  
 }

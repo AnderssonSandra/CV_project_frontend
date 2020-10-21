@@ -1,5 +1,47 @@
 /*CV Footer*/
+#cv-footer {
+    width: 100%;
+    height: 650px;
+    background-color: $beige;
+    margin-top: 10em;
+    #cv-footer-parent {
+        display: block;
+        margin: 5em 0 0 12em;
+    }
+    a {
+        display: block;
+        font-weight: bold;
+        font-size: 1em;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    p {
+        padding: 1em 0;
+    }
+}
 
+/*tablet design for CV footer */
+@include tablet {
+    #cv-footer {
+        height: 500px;
+        #cv-footer-parent {
+            margin: 4em 0 0 5em;
+        }
+    }
+}
+
+/*phone design for CV footer */
+@include phone {
+    #cv-footer {
+        height: 411px;
+        margin-top: 3em;
+        #cv-footer-parent {
+            margin: 4em 0 0 3em;
+        }
+    }
+}
 
 /*Admin Footer*/
 
@@ -13,7 +55,11 @@
         padding-top: 2.8em;
         color: $white;
         font-size: 1.8em;
-        font-family: $headings;
+        display: block;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

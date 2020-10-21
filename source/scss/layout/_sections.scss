@@ -1,3 +1,326 @@
+/*style for cv sections*/
+
+/*general style for all article and sections*/
 .cv-article, #cv-section {
     @include standard-container;
+}
+
+/*about article*/
+#cv-about {
+    background-color: $pink;
+    position: relative;
+    #cv-about-text {
+        width: 100%;
+        box-sizing: border-box;
+        p {
+            padding: 4em 0em 20em 7em;
+            width: 60%;
+        }
+    }
+    #cv-about-image {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #portrait-image {
+        width: 300px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 7%;
+        right: 7%;
+    }
+
+}
+
+/*about article for tablet*/
+@include tablet {
+    #cv-about {
+        #cv-about-text {
+            p {
+                padding: 2em 0em 18em 4em;
+                width: 76%;
+            }
+        }
+        #portrait-image {
+            width: 200px;
+        }
+    
+    }
+}
+
+/*about article for phone*/
+@include phone {
+    #cv-about {
+        #cv-about-text {
+            width: 100%;
+            box-sizing: border-box;
+            p {
+                padding: 2em 1.5em;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        #portrait-image {
+            width: 100%;
+            border-radius: 0;
+            position: relative;
+            bottom: 0;
+            right: 0;
+        }
+    
+    }
+}
+
+
+/*Cv work experiences*/
+#cv-work-container {
+    @include standard-container;
+    .cv-work-parent {
+        width: 60%;
+        margin: 2em auto;
+        box-sizing: border-box;
+    } 
+    h3 {
+        display: block;
+        width: 100%;
+        font-size: 2.5em;
+        border-bottom: 1px solid $pink;
+        padding-bottom: 0.2em;
+        margin: 2em 0 0.5em 0;
+    } 
+    .cv-work-buzzwords {
+        color: $pink;
+        padding-top: 1.2em;
+        font-size: 1em;
+    }
+    .cv-work-workplace {
+        font-weight: bold;
+    }
+    .cv-work-date {
+        font-size: 0.9em;
+    }
+    .cv-work-parent-wrapper {
+        box-sizing: border-box;
+        display: flex;
+        .cv-work-right {
+            padding-left: 2.5em;
+            box-sizing: border-box;
+            width: 80%;
+        }
+        .cv-work-left {
+            width: 20%;
+            box-sizing: border-box;
+        }
+    }
+}
+
+/*Cv work experiences for tablets*/
+@include tablet {
+    #cv-work-container {
+        .cv-work-parent {
+        width: 80%;
+        } 
+    }
+}
+
+
+/*Cv work experiences for phone*/
+@include phone {
+    #cv-work-container {
+        .cv-work-parent {
+            width: 90%;
+        } 
+        h3 {
+            display: block;
+            font-size: 2em;
+            border-bottom: 1px solid $pink;
+            padding-bottom: 0.2em;
+            margin: 2em 0 0.5em 0;
+        } 
+        .cv-work-buzzwords {
+            font-size: 1em;
+        }
+        .cv-work-date {
+            margin-bottom: 1.2em;
+        }
+        .cv-work-parent-wrapper {
+            display: block;
+            .cv-work-right {
+                padding-left: 0;
+                width: 100%;
+            }
+            .cv-work-left {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/*Cv education experiences*/
+#cv-education {
+    background-color: $beige;
+    position: relative;
+    height: 1000px;
+    margin-top: 10em;
+    #cv-education-container {
+        background-color: $white;
+        position: absolute;
+        width: 1200px;
+        height: 500px;
+        padding: 5em;
+        box-sizing: border-box;
+    }
+    #glasses-image {
+        width: 500px;
+        position: absolute;
+        left: 900px;
+        top: 370px;
+    }
+    h3 {
+        font-size: 2.5em;
+    }
+    a {
+        display: block;
+        margin-bottom: 2em;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1em;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+} 
+
+/*responsive design for Cv education experiences*/
+@media (max-width:1450px) {
+    #cv-education {      
+        #cv-education-container {
+            width: 800px;
+        }
+        #glasses-image {
+            width: 400px;
+            left: 598px;
+        }
+        
+    } 
+}
+
+@media (max-width:1100px) {
+    #cv-education {
+        #cv-education-container {
+            width: 700px;
+        }
+        #glasses-image {
+            left: 391px;
+        }
+        
+    } 
+}
+
+/*tablet design for CV education experiences*/
+@include tablet {
+    #cv-education {
+        height: 800px;
+        #cv-education-container {
+            width: 500px;
+        }
+        #glasses-image {  
+            width: 250px;
+            left: 300px;
+            top: 417px;
+        } 
+    } 
+}
+
+/*phone design for CV education experiences*/
+@include phone {
+    #cv-education {
+        margin-top: 4em;
+        height: 627px;
+        #cv-education-container {
+            width: 300px;
+            padding: 4em 1em 1em 2em;
+            height: 394px;
+        }
+        #glasses-image {  
+            width: 150px;
+            left: 167px;
+            top: 355px;
+        } 
+        h3 {
+            font-size: 2em;
+        }
+    } 
+}
+
+/*design for projects*/
+#cv-projects {
+    #cv-project-intro-text {
+        display: block;
+        margin: 4em 0 1em 17%;
+    }
+    #cv-project-container {
+        box-sizing: border-box;
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        .cv-project-parent {
+            background-color: $lightpink;
+            position: relative;
+            flex: 0 29%;
+            padding-top: 29%;
+            box-sizing: border-box;
+            margin: 2%;
+            &:hover {
+                background-color: $pink;
+            }
+            .cv-project-number {
+                position: absolute;
+                right: 3%;
+                line-height: 0;
+                bottom: 14%;
+                font-size: 12em;
+                font-family: $headings;
+            }
+        }
+    }
+}
+
+/*tablet design for projects*/
+@include tablet {
+    #cv-projects {
+        #cv-project-intro-text {
+            margin: 4em 0 1em 12%;
+        }
+        #cv-project-container {
+            width: 80%;
+            .cv-project-parent {
+                flex: 0 46%;
+                padding-top: 46%;
+                .cv-project-number {
+                    font-size: 10em;
+                }
+            }
+        }
+    }
+}
+
+/*phone design for projects*/
+@include phone {
+    #cv-projects {
+        #cv-project-intro-text {
+            margin: 4em 0 1em 6%;
+        }
+        #cv-project-container {
+            width: 90%;
+            .cv-project-parent {
+                flex: 0 96%;
+                padding-top: 96%;
+                .cv-project-number {
+                    font-size: 8em;
+                }
+            }
+        }
+    }
 }

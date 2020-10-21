@@ -22,10 +22,55 @@ li
 {
     font-family: $text;
     color: $black;
+    line-height: 1.8;
+    font-size: 1.2em;
+}
+
+h2 {
+    font-size: 5em;
+    padding: 2em 0 0 1.5em;
+    display: block;
+    @include standard-container;
 }
 
 .admin-h2 {
     padding: 2em 0 0 0;
     text-align: center;
     font-size: 3.5em;
+}
+
+/*responsive design for tablets*/
+@include tablet {
+    h2 {
+        font-size: 3.5em;
+        padding: 2em 0 0 0.5em
+    }
+
+    .admin-h2 {
+        padding: 1em 0 0 0;
+    }
+}
+
+/*responsive design for phones*/
+@include phone {
+    h2 {
+        font-size: 2.5em;
+        padding: 2em 0 0 0.5em
+    }
+
+    .admin-h2 {
+        padding: 0.5em 0 0 0;
+        font-size: 2.5em;
+    }
+
+    p, 
+    span,
+    label,
+    th,
+    td,
+    a,
+    li
+    {
+        font-size: 1em;
+    }
 }

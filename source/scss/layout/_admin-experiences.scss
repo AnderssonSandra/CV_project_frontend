@@ -1,0 +1,51 @@
+/*style for show experiences in admin site*/
+
+.admin-show-experience {
+    width: 50%;
+    box-sizing: border-box;
+    background-color: $beige;
+    margin: 2em auto;
+    padding: 2em;
+    h3 {
+        font-size: 2em;
+        font-weight: bold;
+    }
+    p {
+        margin: 0.5em 0 2em 0;
+    }
+    a {
+        margin: 0.5em 0 2em 0;
+        display: block;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .submit-btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        background-color: #bc8373;
+        color: white;
+        padding: 1em;
+        margin-top: 1em;
+        &:hover {
+            background-color: black;
+        }
+    }
+}
+
+/*style for tablet to show experiences in admin site*/
+@include tablet {
+    .admin-show-experience {
+        width: 70%;
+    }
+}
+
+/*style for phone to show experiences in admin site*/
+@include phone {
+    .admin-show-experience {
+        width: 98%;
+    }
+}
