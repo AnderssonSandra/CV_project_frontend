@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Peddana&display=swap" rel="stylesheet"></head>
 <body>
+    <!--header-->
     <header id="cv-header">
         <div id="cv-header-empty">
         </div>
@@ -18,6 +19,7 @@
         </div>
     </header>
     <section id="cv-section">
+        <!--main meny-->
         <article class="cv-article" id="cv-navigation">
             <nav id="cv-main-nav">
                 <ul>
@@ -29,6 +31,7 @@
                 </ul>
             </nav>
         </article>
+        <!--about me-->
         <article class="cv-article" id="cv-about">
             <div class="cv-about-div" id="cv-about-image">
                 <img id="portrait-image" src="images\profilepicture2.jpg" alt="Portrait on Sandra">
@@ -38,6 +41,7 @@
                 <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
             </div>
         </article>
+        <!--work experiences-->
         <article class="cv-article" id="cv-work">
             <h2>2. Work Experiences.</h2>
             <div id="cv-work-container">
@@ -69,6 +73,7 @@
                 </div>
             </div>
         </article>
+        <!--Education-->
         <article class="cv-article" id="cv-education">
             <h2>3. Education.</h2>
             <div id="cv-education-container">
@@ -76,36 +81,51 @@
                 <div class="cv-education-parent">
                     <h3>Webbutvecklare</h3>
                     <p>Mid University, 2021</p>
-                    <a class="cv-education-read-more" href="">More Info</a>
+                    <button data-modal-target="#education" class="cv-education-read-more">More Info</button>
                 </div>
                 <div class="cv-education-parent">
                     <h3>Human Resources</h3>
                     <p>Örebro University, 2017</p>
-                    <a class="cv-education-read-more" href="">More Info</a>
+                    <button data-modal-target="#education" class="cv-education-read-more">More Info</button>
                 </div>
             </div>
         </article>
+        <!--Popup div for show education info-->
+        <div class="cv-popup" id="education">
+            <h3 class="cv-popup-heading">Webbutvecklare</h3>
+            <p class="cv-popup-text">Beskrivningen skrivs här But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
+            <button data-close-button class="close-button">&times;</button>
+        </div>  
+        <!--projects-->
         <article class="cv-article" id="cv-projects">
             <h2>4. Some Projects.</h2>
             <p id="cv-project-intro-text">Click on a box to show a Project.</p>
             <div id="cv-project-container">
-                <div class="cv-project-parent">
+                <div data-modal-target="#project" class="cv-project-parent">
                     <p class="cv-project-number">1.</p>
                 </div>
-                <div class="cv-project-parent">
+                <div data-modal-target="#project" class="cv-project-parent">
                     <p class="cv-project-number">2.</p>
                 </div>
-                <div class="cv-project-parent">
+                <div data-modal-target="#project" class="cv-project-parent">
                     <p class="cv-project-number">3.</p>
                 </div>
-                <div class="cv-project-parent">
+                <div data-modal-target="#project" class="cv-project-parent">
                     <p class="cv-project-number">4.</p>
                 </div>
-                <div class="cv-project-parent">
+                <div data-modal-target="#project" class="cv-project-parent">
                     <p class="cv-project-number">5.</p>
                 </div>
             </div>
         </article>
+        <!--Popup div for show project info-->
+        <div class="cv-popup" id="project">
+            <h3 class="cv-popup-heading">Webbutvecklare</h3>
+            <p class="cv-popup-text">Beskrivningen skrivs här But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
+            <p class="cv-popup-techniques">.NET, JS, HTML, CSS</p>
+            <a class="cv-popup-link" href="">Länk till projektet</a>
+            <button data-close-button class="close-button">&times;</button>
+        </div> 
     </section>
     <footer id="cv-footer">
         <h2>5. Contact Info</h2>
@@ -115,5 +135,8 @@
             <a href="">LinkedIn profile</a>
         </div>
     </footer>
+    <!--overlay for popups-->
+    <div id="overlay"></div>
+    <script src="js/main.js"></script>
 </body>
 </html>
