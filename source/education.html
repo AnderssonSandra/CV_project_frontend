@@ -23,31 +23,25 @@
             <h2 class="admin-h2">Add Education.</h2>
             <form action="" method="get" id="educationForm" name="educationForm">
                 <label for="education">Name of Education:</label><br>
-                <input type="text" name="education"><br>
+                <input type="text" name="education" id="education-form-education"><br>
                 <label for="school">Name of School:</label><br>
-                <input type="text" name="school"><br>
+                <input type="text" name="school" id="education-form-school"><br>
                 <label for="startDate">Start Date:</label><br>
-                <input type="date" name="startDate"><br>
+                <input type="date" name="startDate" id="education-form-startDate"><br>
                 <label for="endDate">End Date:</label><br>
-                <input type="date" name="endDate"><br>
+                <input type="date" value="" name="endDate" id="education-form-endDate"><br>
                 <label for="description">Description:</label><br>
-                <input type="textarea" name="description"><br>
-                <input class="submit-btn" type="submit" id="educationBtn" form="educationForm" value="Add Education">
+                <input type="textarea" name="description" id="education-form-description"><br>
+                <input class="submit-btn" type="submit" id="add-education-btn" form="educationForm" value="Add Education">
+                <div id="message-div">
+                    <!--Message div-->
+                </div>
             </form>
         </article>
         <article>
-            <h2 class="admin-h2">My Work Experiences.</h2>
-            <div class="admin-show-experience">
-                <h3>Name of Education:</h3>
-                <p>Webbutvecklare</p>
-                <h3>Name of School:</h3>
-                <p>Mittuniversitet</p>
-                <h3>Date</h3>
-                <p>2020 - 2021</p>
-                <h3>Description</h3>
-                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
-                <button class="submit-btn">Uppdatera</button>
-                <button class="submit-btn">Radera</button>
+            <h2 class="admin-h2">My Education Experiences.</h2>
+            <div class="admin-show-experience" id="admin-show-education">
+                <!--my educations gonna be here-->
             </div>
         </article>
     </section>
@@ -55,4 +49,5 @@
         <a class="admin-footer-text" href="">Click here to sign out</a>
     </footer>
 </body>
+<script src="js/main.js"></script>
 </html>

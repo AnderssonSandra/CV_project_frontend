@@ -7,7 +7,7 @@ const overlay = document.getElementById('overlay');
 openButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = document.querySelector(button.dataset.modalTarget)
-        openEducation(modal)
+        openModal(modal)
     })
 })
 
@@ -15,19 +15,19 @@ openButtons.forEach(button => {
 closeButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = button.closest('.cv-popup')
-        closeEducation(modal)
+        closeModal(modal)
     })
 })
 
 //open modul
-function openEducation(modal) {
+function openModal(modal) {
     if (modal == null) return
     modal.classList.add('active')
     overlay.classList.add('active')
 }
 
 //close module
-function closeEducation(modal) {
+function closeModal(modal) {
     if (modal == null) return
     modal.classList.remove('active')
     overlay.classList.remove('active')

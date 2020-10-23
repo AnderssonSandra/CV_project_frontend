@@ -14,7 +14,10 @@ const babel = require("gulp-babel");
 //paths
 const files = {
     htmlPath: "source/**/*.html",
-    jsPath: "source/**/*.js",
+    jsEducationPath: "source/js/education/**/*.js",
+    jsWorkPath: "source/js/work/**/*.js",
+    jsProjectPath: "source/js/project/**/*.js",
+    jsGeneralPath: "source/js/main/**/*.js",
     sassPath: "source/**/*.scss",
     imagesPath: "source/**/*.{gif,png,jpg,svg}",
 }
@@ -32,8 +35,44 @@ function copyHTML () {
 }
 
 //concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
-function jsTask() {
-    return src(files.jsPath)
+function jsEducationTask() {
+    return src(files.jsEducationPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(concat('education.js')) 
+        .pipe(uglify()) 
+        .pipe(sourcemaps.write(".maps"))
+        .pipe(dest('publish/js') 
+    );
+}
+
+//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
+function jsWorkTask() {
+    return src(files.jsWorkPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(concat('work.js')) 
+        .pipe(uglify()) 
+        .pipe(sourcemaps.write(".maps"))
+        .pipe(dest('publish/js') 
+    );
+}
+
+//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
+function jsProjectTask() {
+    return src(files.jsProjectPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(concat('project.js')) 
+        .pipe(uglify()) 
+        .pipe(sourcemaps.write(".maps"))
+        .pipe(dest('publish/js') 
+    );
+}
+
+//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
+function jsGeneralTask() {
+    return src(files.jsGeneralPath)
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['@babel/env'] }))
         .pipe(concat('main.js')) 
@@ -71,7 +110,10 @@ function watchTask() {
         }
     });
         watch([files.htmlPath], copyHTML).on('change', browserSync.reload);
-        watch([files.jsPath], jsTask).on('change', browserSync.reload);
+        watch([files.jsEducationPath], jsEducationTask).on('change', browserSync.reload);
+        watch([files.jsWorkPath], jsWorkTask).on('change', browserSync.reload);
+        watch([files.jsProjectPath], jsProjectTask).on('change', browserSync.reload);
+        watch([files.jsGeneralPath], jsGeneralTask).on('change', browserSync.reload);
         watch([files.sassPath], sassTask).on('change', browserSync.reload);
         watch([files.imagesPath], imageTask).on('change', browserSync.reload);
 }
@@ -80,13 +122,16 @@ function watchTask() {
 exports.clean = clean;
 exports.copyHTML = copyHTML;
 exports.sassTask = sassTask;
-exports.jsTask  = jsTask;
+exports.jsEducationTask  = jsEducationTask;
+exports.jsWorkTask  = jsWorkTask;
+exports.jsProjectTask  = jsProjectTask;
+exports.jsGeneralTask  = jsGeneralTask;
 exports.watchTask = watchTask;
 exports.imageTask = imageTask;
 
 //default tasks
 exports.default = series (
     clean,
-    parallel(copyHTML, jsTask, sassTask, imageTask),
+    parallel(copyHTML, jsEducationTask, jsProjectTask, jsWorkTask, jsGeneralTask, sassTask, imageTask),
     watchTask
 );

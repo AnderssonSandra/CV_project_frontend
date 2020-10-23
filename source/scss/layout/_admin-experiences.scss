@@ -1,11 +1,14 @@
 /*style for show experiences in admin site*/
 
 .admin-show-experience {
-    width: 50%;
-    box-sizing: border-box;
-    background-color: $beige;
-    margin: 2em auto;
-    padding: 2em;
+    @include standard-container;
+    .admin-experience {
+        margin: 2em auto;
+        background-color: $beige;
+        box-sizing: border-box;
+        padding: 2em;
+        width: 50%;
+    }
     h3 {
         font-size: 2em;
         font-weight: bold;
@@ -38,16 +41,37 @@
     }
 }
 
+#error-div, #message-div {
+    p {
+        margin: 3em 0 0 0.5em;
+        color: $pink;
+        font-weight: bold;
+    }
+}
+
+#errorMsg {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 3em 0;
+}
+
 /*style for tablet to show experiences in admin site*/
 @include tablet {
     .admin-show-experience {
-        width: 70%;
+        .admin-experience {
+            width: 70%;
+        }
+        
     }
 }
 
 /*style for phone to show experiences in admin site*/
 @include phone {
     .admin-show-experience {
-        width: 98%;
+        .admin-experience {
+            width: 98%;
+        }
+        
     }
 }

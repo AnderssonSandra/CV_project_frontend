@@ -24,35 +24,27 @@
             <h2 class="admin-h2">Add Work Experience.</h2>
             <form action="" method="get" id="workForm" name="workForm">
                 <label for="title">Title:</label><br>
-                <input type="text" name="title"><br>
+                <input type="text" id="work-form-title" name="title"><br>
                 <label for="Workplace">Workplace:</label><br>
-                <input type="text" name="workplace"><br>
+                <input type="text" id="work-form-workplace" name="workplace"><br>
                 <label for="startDate">Start Date:</label><br>
-                <input type="date" name="startDate"><br>
+                <input type="date" id="work-form-startDate" name="startDate"><br>
                 <label for="endDate">End Date:</label><br>
-                <input type="date" name="endDate"><br>
+                <input type="date" id="work-form-endDate" name="endDate"><br>
                 <label for="buzzwords">Buzzwords:</label><br>
-                <input type="text" name="buzzwords"><br>
+                <input type="text" id="work-form-buzzwords" name="buzzwords"><br>
                 <label for="description">Description:</label><br>
-                <input type="textarea" name="description"><br>
-                <input class="submit-btn" type="submit" id="workBtn" form="workForm" value="Add Work">
+                <input type="textarea" id="work-form-description" name="description"><br>
+                <input class="submit-btn" type="submit" id="add-work-btn" form="workForm" value="Add Work">
+                <div id="message-div">
+                    <!--Message div-->
+                </div>
             </form>
         </article>
         <article>
             <h2 class="admin-h2">My Work Experiences.</h2>
-            <div class="admin-show-experience">
-                <h3>Title:</h3>
-                <p>Tech recruiter</p>
-                <h3>Workplace:</h3>
-                <p>Consid AB</p>
-                <h3>Date</h3>
-                <p>20 mars 2020 - 20 mars 2021</p>
-                <h3>Buzzwords</h3>
-                <p>Interviews, Recruiting, HR</p>
-                <h3>Description</h3>
-                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
-                <button class="submit-btn">Uppdatera</button>
-                <button class="submit-btn">Radera</button>
+            <div class="admin-show-experience" id="admin-show-work">
+                <!--my works gonna be here-->
             </div>
         </article>
     </section>
@@ -60,4 +52,5 @@
         <a class="admin-footer-text" href="">Click here to sign out</a>
     </footer>
 </body>
+<script src="js/main.js"></script>
 </html>
