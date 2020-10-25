@@ -17,7 +17,7 @@ const files = {
     jsEducationPath: "source/js/education/**/*.js",
     jsWorkPath: "source/js/work/**/*.js",
     jsProjectPath: "source/js/project/**/*.js",
-    jsGeneralPath: "source/js/main/**/*.js",
+    jsCvPath: "source/js/cv/**/*.js",
     sassPath: "source/**/*.scss",
     imagesPath: "source/**/*.{gif,png,jpg,svg}",
 }
@@ -34,7 +34,19 @@ function copyHTML () {
     );
 }
 
-//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
+//Js files to use to CV-concat and minify and use babel for backwards compatible versions of js - send to pub folder
+function jsCvTask() {
+    return src(files.jsCvPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(concat('cv.js')) 
+        .pipe(uglify()) 
+        .pipe(sourcemaps.write(".maps"))
+        .pipe(dest('publish/js') 
+    );
+}
+
+//Js files to use to education-concat and minify and use babel for backwards compatible versions of js - send to pub folder
 function jsEducationTask() {
     return src(files.jsEducationPath)
         .pipe(sourcemaps.init())
@@ -46,7 +58,7 @@ function jsEducationTask() {
     );
 }
 
-//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
+//Js files to use to work-concat and minify and use babel for backwards compatible versions of js - send to pub folder
 function jsWorkTask() {
     return src(files.jsWorkPath)
         .pipe(sourcemaps.init())
@@ -58,24 +70,12 @@ function jsWorkTask() {
     );
 }
 
-//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
+//Js files to use to project-concat and minify and use babel for backwards compatible versions of js - send to pub folder
 function jsProjectTask() {
     return src(files.jsProjectPath)
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['@babel/env'] }))
         .pipe(concat('project.js')) 
-        .pipe(uglify()) 
-        .pipe(sourcemaps.write(".maps"))
-        .pipe(dest('publish/js') 
-    );
-}
-
-//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
-function jsGeneralTask() {
-    return src(files.jsGeneralPath)
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(concat('main.js')) 
         .pipe(uglify()) 
         .pipe(sourcemaps.write(".maps"))
         .pipe(dest('publish/js') 
@@ -113,7 +113,7 @@ function watchTask() {
         watch([files.jsEducationPath], jsEducationTask).on('change', browserSync.reload);
         watch([files.jsWorkPath], jsWorkTask).on('change', browserSync.reload);
         watch([files.jsProjectPath], jsProjectTask).on('change', browserSync.reload);
-        watch([files.jsGeneralPath], jsGeneralTask).on('change', browserSync.reload);
+        watch([files.jsCvPath], jsCvTask).on('change', browserSync.reload);
         watch([files.sassPath], sassTask).on('change', browserSync.reload);
         watch([files.imagesPath], imageTask).on('change', browserSync.reload);
 }
@@ -125,13 +125,13 @@ exports.sassTask = sassTask;
 exports.jsEducationTask  = jsEducationTask;
 exports.jsWorkTask  = jsWorkTask;
 exports.jsProjectTask  = jsProjectTask;
-exports.jsGeneralTask  = jsGeneralTask;
+exports.jsCvTask  = jsCvTask;
 exports.watchTask = watchTask;
 exports.imageTask = imageTask;
 
 //default tasks
 exports.default = series (
     clean,
-    parallel(copyHTML, jsEducationTask, jsProjectTask, jsWorkTask, jsGeneralTask, sassTask, imageTask),
+    parallel(copyHTML, jsEducationTask, jsProjectTask, jsWorkTask, jsCvTask, sassTask, imageTask),
     watchTask
 );

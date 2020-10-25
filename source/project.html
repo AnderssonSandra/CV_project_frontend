@@ -23,43 +23,30 @@
             <h2 class="admin-h2">Add Project.</h2>
             <form action="" method="get" id="projectForm" name="projectForm">
                 <label for="name">Name of Project:</label><br>
-                <input type="text" name="name"><br>
+                <input type="text" id="project-form-name" name="name"><br>
                 <label for="link">Link to Website:</label><br>
-                <input type="text" name="link"><br>
+                <input type="text" id="project-form-link" name="link"><br>
                 <label for="techniques">Techniques:</label><br>
-                <input type="text" name="techniques"><br>
-                <label for="date">Relese Date for project:</label><br>
-                <input type="date" name="date"><br>
+                <input type="text" id="project-form-techniques" name="techniques"><br>
+                <label for="startDate">Start Date for project:</label><br>
+                <input type="date" id="project-form-startDate" name="startDate"><br>
+                <label for="endDate">Relese Date for project:</label><br>
+                <input type="date" id="project-form-endDate" name="endDate"><br>
                 <label for="description">Description:</label><br>
-                <input type="textarea" name="description"><br>
-                <input class="submit-btn" type="submit" id="projectBtn" form="projectForm" value="Add Project">
+                <input type="textarea" id="project-form-description" name="description"><br>
+                <input class="submit-btn" type="submit" id="add-project-btn" form="projectForm" value="Add Project">
                 <div id="message-div">
                     <!--Message div-->
                 </div>
             </form>
+            <div id="update-div">
+                <!--Div where the update info goes-->
+            </div>
         </article>
         <article>
             <h2 class="admin-h2">My Projects.</h2>
             <div class="admin-show-experience" id="admin-show-project">
                 <!--my projects gonna be here-->
-                <div class="admin-experience">
-                    <h3>Name of Project:</h3>
-                    <p>Projekt 1</p>
-                    <h3>Link to Website:</h3>
-                    <a href="">www.website.se</a>
-                    <h3>Teqniques:</h3>
-                    <p>.NET, Java, HTML, CSS</p>
-                    <h3>Relese Year</h3>
-                    <p>2020</p>
-                    <h3>Description</h3>
-                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p>
-                    <button class="submit-btn">Uppdatera</button>
-                    <button class="submit-btn">Radera</button>
-                    <div id="error-div">
-                        <!--Error div-->
-                        <p>obs! det gick inte</p>
-                    </div>
-                </div>
             </div>
         </article>
     </section>
@@ -67,5 +54,5 @@
         <a class="admin-footer-text" href="">Click here to sign out</a>
     </footer>
 </body>
-<script src="js/main.js"></script>
+<script src="js/project.js"></script>
 </html>

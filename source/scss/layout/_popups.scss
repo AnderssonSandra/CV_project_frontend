@@ -76,6 +76,16 @@
     }
 }
 
+
+#cv-admin-popup {
+    width: 80%;
+    max-width: 1000px;
+}
+
+.update-form {
+    width: 100%;
+}
+
 /*responsive design for popups*/
 
 @include tablet {
@@ -96,5 +106,28 @@
         top: 0;
         right: 0;
         padding: 0.5em;
+    }
+
+    #cv-admin-popup {
+        width: 100%;
+        padding: 0;
+    }
+
+    .update-form {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        input {
+            margin: 0;
+            padding: 0.4em;
+        }
+        label {
+            font-size: 1em;
+            padding: 0;
+        }
+        input[type=submit] {
+            margin-top: 0.5em;
+            font-size: 1em;
+        }
     }
 }
