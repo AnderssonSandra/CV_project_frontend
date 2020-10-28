@@ -14,10 +14,7 @@ const babel = require("gulp-babel");
 //paths
 const files = {
     htmlPath: "source/**/*.html",
-    jsEducationPath: "source/js/education/**/*.js",
-    jsWorkPath: "source/js/work/**/*.js",
-    jsProjectPath: "source/js/project/**/*.js",
-    jsCvPath: "source/js/cv/**/*.js",
+    jsPath: "source/js/**/*.js",
     sassPath: "source/**/*.scss",
     imagesPath: "source/**/*.{gif,png,jpg,svg}",
 }
@@ -35,47 +32,11 @@ function copyHTML () {
 }
 
 //Js files to use to CV-concat and minify and use babel for backwards compatible versions of js - send to pub folder
-function jsCvTask() {
-    return src(files.jsCvPath)
+function jsTask() {
+    return src(files.jsPath)
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['@babel/env'] }))
         .pipe(concat('cv.js')) 
-        .pipe(uglify()) 
-        .pipe(sourcemaps.write(".maps"))
-        .pipe(dest('publish/js') 
-    );
-}
-
-//Js files to use to education-concat and minify and use babel for backwards compatible versions of js - send to pub folder
-function jsEducationTask() {
-    return src(files.jsEducationPath)
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(concat('education.js')) 
-        .pipe(uglify()) 
-        .pipe(sourcemaps.write(".maps"))
-        .pipe(dest('publish/js') 
-    );
-}
-
-//Js files to use to work-concat and minify and use babel for backwards compatible versions of js - send to pub folder
-function jsWorkTask() {
-    return src(files.jsWorkPath)
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(concat('work.js')) 
-        .pipe(uglify()) 
-        .pipe(sourcemaps.write(".maps"))
-        .pipe(dest('publish/js') 
-    );
-}
-
-//Js files to use to project-concat and minify and use babel for backwards compatible versions of js - send to pub folder
-function jsProjectTask() {
-    return src(files.jsProjectPath)
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(concat('project.js')) 
         .pipe(uglify()) 
         .pipe(sourcemaps.write(".maps"))
         .pipe(dest('publish/js') 
@@ -110,10 +71,7 @@ function watchTask() {
         }
     });
         watch([files.htmlPath], copyHTML).on('change', browserSync.reload);
-        watch([files.jsEducationPath], jsEducationTask).on('change', browserSync.reload);
-        watch([files.jsWorkPath], jsWorkTask).on('change', browserSync.reload);
-        watch([files.jsProjectPath], jsProjectTask).on('change', browserSync.reload);
-        watch([files.jsCvPath], jsCvTask).on('change', browserSync.reload);
+        watch([files.jsPath], jsTask).on('change', browserSync.reload);
         watch([files.sassPath], sassTask).on('change', browserSync.reload);
         watch([files.imagesPath], imageTask).on('change', browserSync.reload);
 }
@@ -122,16 +80,13 @@ function watchTask() {
 exports.clean = clean;
 exports.copyHTML = copyHTML;
 exports.sassTask = sassTask;
-exports.jsEducationTask  = jsEducationTask;
-exports.jsWorkTask  = jsWorkTask;
-exports.jsProjectTask  = jsProjectTask;
-exports.jsCvTask  = jsCvTask;
+exports.jsTask  = jsTask;
 exports.watchTask = watchTask;
 exports.imageTask = imageTask;
 
 //default tasks
 exports.default = series (
     clean,
-    parallel(copyHTML, jsEducationTask, jsProjectTask, jsWorkTask, jsCvTask, sassTask, imageTask),
+    parallel(copyHTML, jsTask, sassTask, imageTask),
     watchTask
 );

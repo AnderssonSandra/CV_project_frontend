@@ -42,25 +42,3 @@
         }
     }
 }
-
-/*Admin Footer*/
-
-.admin-footer {
-    @include standard-container;
-    height: 200px;
-    margin: 0 auto;
-    background-color: $pink;
-    .admin-footer-text {
-        text-align: center;
-        padding-top: 2.8em;
-        color: $white;
-        font-size: 1.8em;
-        display: block;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-
