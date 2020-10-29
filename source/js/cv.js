@@ -21,7 +21,7 @@ window.onload = function(){
 function getProjects() {
     projectContainer.innerHTML = '';
     //show project with GET
-    fetch('http://localhost/CV_project/CV_Backend/api/projectApi.php', {
+    fetch('http://studenter.miun.se/~saan1906/writeable/dt173g/CV_project/CV_Backend/api/projectApi.php', {
         method: 'GET',
     })
     .then(response => {
@@ -42,8 +42,8 @@ function getProjects() {
                     <h3 class="cv-popup-heading">${projects.name}</h3>
                     <p class="cv-popup-text">${projects.description}</p>
                     <p class="cv-popup-techniques">${projects.techniques !== "" ? projects.techniques : ""}</p>
-                    <a class="cv-popup-link" target="_blank" href="${projects.link !== "" ? projects.link : ""}">${projects.link !== "" ? "Link to Website" : "There is no Link to Website"}</a>
-                    <a class="cv-popup-link" target="_blank" href="${projects.github !== "" ? projects.github : ""}">${projects.github !== "" ? "Link to Github Repo" : "There is no Link to Github Repo"}</a>
+                    <a class="cv-popup-link" target="_blank" href="//${projects.link !== "" ? projects.link : ""}">${projects.link !== "" ? "Link to Website" : "There is no Link to Website"}</a>
+                    <a class="cv-popup-link" target="_blank" href="//${projects.github !== "" ? projects.github : ""}">${projects.github !== "" ? "Link to Github Repo" : "There is no Link to Github Repo"}</a>
                     <button data-close-button class="close-button">&times;</button>
                 </div> 
             </div>`
@@ -62,7 +62,7 @@ function getProjects() {
 function getEducations() {
     educationContainer.innerHTML = "<img id='glasses-image' src='images/glasses.png' alt='Image on glasses'>";
     //show education with GET
-    fetch('http://localhost/CV_project/CV_Backend/api/educationApi.php', {
+    fetch('http://studenter.miun.se/~saan1906/writeable/dt173g/CV_project/CV_Backend/api/educationApi.php', {
         method: 'GET',
     })
     .then(response => {
@@ -76,7 +76,7 @@ function getEducations() {
             educationContainer.innerHTML +=
             `<div class="cv-education-parent">
                 <h3>${educations.education}</h3>
-                <p>${educations.school},  ${educations.endDate !== '0000-00-00' ? educations.endDate : "Ongoing"}</p>
+                <p>${educations.school},  ${educations.endDate !== null ? educations.endDate : "Ongoing"}</p>
                 <button data-modal-target="#education${educations.id}" class="cv-education-read-more">More Info</button>
             </div>
             <!--Popup div for show education info-->
@@ -102,7 +102,7 @@ function getEducations() {
 function getWorks() {
     workContainer.innerHTML = '';
     //show work with GET
-    fetch('http://localhost/CV_project/CV_Backend/api/workApi.php', {
+    fetch('http://studenter.miun.se/~saan1906/writeable/dt173g/CV_project/CV_Backend/api/workApi.php', {
         method: 'GET',
     })
     .then(response => {
@@ -119,7 +119,7 @@ function getWorks() {
                 <div class="cv-work-parent-wrapper">
                     <div class="cv-work-left">
                         <p class="cv-work-workplace">${works.workplace}</p>
-                        <p class="cv-work-date">${works.startDate}  to  ${works.endDate !== '0000-00-00' ? works.endDate : "Ongoing"}</p>
+                        <p class="cv-work-date">${works.startDate}  -  ${works.endDate !== null ? works.endDate : ""}</p>
                     </div>
                     <div class="cv-work-right">
                         <p class="cv-work-description">${works.description}</p>
@@ -143,7 +143,7 @@ function getInfo() {
     footerContainer.innerHTML = '';
     menuContainer.innerHTML = '';
     //show info with GET
-    fetch('http://localhost/CV_project/CV_Backend/api/infoApi.php', {
+    fetch('http://studenter.miun.se/~saan1906/writeable/dt173g/CV_project/CV_Backend/api/infoApi.php', {
         method: 'GET',
     })
     .then(response => {
@@ -183,7 +183,7 @@ function getInfo() {
             footerContainer.innerHTML +=
             `<p>${info.phone}</p> 
             <a href="mailto:${info.email}">${info.email}</a><br>
-            <a href="">${info.linkedin}</a>
+            <a href="//${info.linkedin}">${info.linkedin}</a>
             `
         })
     })
