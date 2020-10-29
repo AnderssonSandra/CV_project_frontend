@@ -183,7 +183,7 @@ function getInfo() {
             footerContainer.innerHTML +=
             `<p>${info.phone}</p> 
             <a href="mailto:${info.email}">${info.email}</a><br>
-            <a href="//${info.linkedin}">${info.linkedin}</a>
+            <a target="_blank" href="//${info.linkedin}">${info.linkedin}</a>
             `
         })
     })
