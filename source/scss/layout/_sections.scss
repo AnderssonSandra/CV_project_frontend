@@ -159,13 +159,12 @@
 #cv-education {
     background-color: $beige;
     position: relative;
-    height: 1000px;
     margin-top: 10em;
+    padding: 5em 0 10em 0;
     #cv-education-container {
         background-color: $white;
-        position: absolute;
+        position: relative;
         width: 1200px;
-        height: 500px;
         padding: 5em;
         box-sizing: border-box;
     }
@@ -173,7 +172,7 @@
         width: 500px;
         position: absolute;
         left: 900px;
-        top: 370px;
+        bottom: -119px;
     }
     h3 {
         font-size: 2.5em;
@@ -223,14 +222,13 @@
 /*tablet design for CV education experiences*/
 @include tablet {
     #cv-education {
-        height: 800px;
         #cv-education-container {
             width: 500px;
         }
         #glasses-image {  
             width: 250px;
             left: 300px;
-            top: 417px;
+            bottom: -56px;
         } 
     } 
 }
@@ -239,16 +237,14 @@
 @include phone {
     #cv-education {
         margin-top: 4em;
-        height: 627px;
         #cv-education-container {
             width: 300px;
             padding: 4em 1em 1em 2em;
-            height: 394px;
         }
         #glasses-image {  
             width: 150px;
             left: 167px;
-            top: 355px;
+            bottom: -30px;
         } 
         h3 {
             font-size: 2em;
